@@ -1,0 +1,1230 @@
+##
+##
+VERSION 1
+##
+##
+
+activities_info = [
+#Merge and keep merged
+('NEW', ['NEW', 'NEW', 'neq'], 0, 10000),
+('NEW', ['NEW', 'neq', 'New', 'New', 'New'], 10001, 20000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'New', 'neww'], 20001, 50000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'New', 'neww', 'start', 'start', 'start', 'start'], 50001, 80000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'NEW', 'neww', 'start', 'start', 'start', 'NEW'], 80001, 101289),
+
+('FIN', ['FIN', 'FIN', 'Fin'], 0, 10000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 111'], 10001, 30000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 222', 'fin - 222', 'fin - 222'], 30001, 50000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over', 'Over', 'Over', 'Over'], 50001, 74738),
+
+('RELEASE', ['RELEASE', 'RELEASE', 'release'], 0, 10000),
+('RELEASE', ['RELEASE', 'release', 'release'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release1', 'release1'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'release2', 'release2', 'release2'], 20001, 30000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'output', 'output', 'output', 'output', 'output'], 30001, 40000),
+('RELEASE', ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release1', 'release2', 'output', 'Release','Release', 'Release', 'Release'], 40001, 70926),
+
+
+#Merge and split
+('CODE OK', ['CODE OK', 'CODE OK', 'CODE OK', 'code ok', 'code ok'], 0, 2000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code good', 'code good'], 2001, 5000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code OK', 'code OK', 'code OK'], 5001, 7000),
+('CODE OK', ['CODE OK', 'code good', 'code good', 'code good'], 7001, 8000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'code good'], 8001, 20000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'CODE OK', 'CODE OK', 'code good', 'code good'], 20001, 34003),
+#splitting starts
+('CODE OK', ['code ok'], 36701, 36900),
+('CODE OK', ['code OK'], 36900, 37300),
+('CODE OK', ['code good'], 39000, 39500),
+('CODE OK', ['code ok'], 60000, 60500),
+('CODE OK', ['code OK'], 63000, 63500),
+('CODE OK', ['code good'], 65000, 65500),
+
+#Merge and split
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'Billed', 'Billed'], 0, 2000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'billed', 'billed'], 2001, 5000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'charged', 'charged', 'charged'], 5001, 7000),
+('BILLED', ['BILLED', 'charged', 'charged', 'charged'], 7001, 8000),
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'BILLED', 'Billed', 'billed', 'charged'], 8001, 15000),
+('BILLED', ['BILLED', 'BILLED', 'charged', 'charged', 'Billed', 'billed', 'charged'], 15000, 20000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billed'], 20001, 24000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billedd', 'billed', 'billed', 'billed', 'charged'], 24001, 33724),
+#splitting starts
+('BILLED', ['Billed', 'Billed'], 36701, 36900),
+('BILLED', ['billed', 'billed'], 36901, 37300),
+('BILLED', ['charged', 'charged'], 39000, 39500),
+('BILLED', ['Billed', 'Billed'], 60000, 60500),
+('BILLED', ['billed', 'billed'], 63000, 63500),
+('BILLED', ['charged', 'charged'], 65000, 65500),
+
+#Merge and split
+('CHANGE DIAGN', ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 1'], 0, 2000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2'], 2001, 5000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3'], 5001, 7000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 7001, 8000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn'], 8001, 15000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 15000, 22724),
+#splitting starts
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 25000, 25500),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 29000, 29500),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 31000, 31500),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 34000, 34500),
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 36000, 36400),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 38000, 38400),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 40000, 40400),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 42000, 42400),
+
+#Not merge
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr'], 0, 10),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1'], 0, 10),
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr'], 60, 70),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1'], 300, 310),
+]
+
+
+
+##
+##
+VERSION 2
+##
+##
+
+activities_info = [
+#Merge and keep merged
+('NEW', ['NEW', 'NEW', 'neq'], 0, 10000),
+('NEW', ['NEW', 'neq', 'New', 'New', 'New'], 10001, 20000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'New', 'neww'], 20001, 50000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'New', 'neww', 'start', 'start', 'start', 'start'], 50001, 80000),
+('NEW', ['NEW', 'NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'start', 'start', 'start', 'start' ], 80001, 101289),
+
+('FIN', ['FIN', 'FIN', 'Fin'], 0, 10000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 111'], 10001, 30000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 222', 'fin - 222', 'fin - 222'], 30001, 50000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over', 'Over', 'Over', 'Over'], 50001, 74738),
+
+('RELEASE', ['RELEASE', 'RELEASE', 'release'], 0, 10000),
+('RELEASE', ['RELEASE', 'release', 'release'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release1', 'release1'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'release2', 'release2', 'release2'], 20001, 30000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'output', 'output', 'output', 'output', 'output'], 30001, 40000),
+('RELEASE', ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release1', 'release2', 'output', 'Release','Release', 'Release', 'Release'], 40001, 70926),
+
+
+#Merge and split
+('CODE OK', ['CODE OK', 'CODE OK', 'CODE OK', 'code ok', 'code ok'], 0, 2000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code good', 'code good'], 2001, 5000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code OK', 'code OK', 'code OK'], 5001, 7000),
+('CODE OK', ['CODE OK', 'code good', 'code good', 'code good'], 7001, 8000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'code good'], 8001, 20000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'CODE OK', 'CODE OK', 'code good', 'code good'], 20001, 34003),
+#splitting starts
+('CODE OK', ['code ok'], 36701, 36705),
+('CODE OK', ['code OK'], 36900, 36905),
+('CODE OK', ['code good'], 39000, 39010),
+('CODE OK', ['code ok'], 60000, 60007),
+('CODE OK', ['code OK'], 63000, 63008),
+('CODE OK', ['code good'], 65000, 65008),
+
+#Merge and split
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'Billed', 'Billed'], 0, 2000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'billed', 'billed'], 2001, 5000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'charged', 'charged', 'charged'], 5001, 7000),
+('BILLED', ['BILLED', 'charged', 'charged', 'charged'], 7001, 8000),
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'BILLED', 'Billed', 'billed', 'charged'], 8001, 15000),
+('BILLED', ['BILLED', 'BILLED', 'charged', 'charged', 'Billed', 'billed', 'charged'], 15000, 20000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billed'], 20001, 24000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billedd', 'billed', 'billed', 'billed', 'charged'], 24001, 33724),
+#splitting starts
+('BILLED', ['Billed', 'Billed'], 36701, 36705),
+('BILLED', ['billed', 'billed'], 36901, 36909),
+('BILLED', ['charged', 'charged'], 39000, 39008),
+('BILLED', ['Billed', 'Billed'], 60000, 60004),
+('BILLED', ['billed', 'billed'], 63000, 63007),
+('BILLED', ['charged', 'charged'], 65000, 65009),
+
+#Merge and split
+('CHANGE DIAGN', ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 1'], 0, 2000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2'], 2001, 5000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3'], 5001, 7000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 7001, 8000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn'], 8001, 15000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 15000, 22724),
+#splitting starts
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 25000, 25006),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 29000, 29009),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 31000, 31006),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 34000, 34004),
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 36000, 36009),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 38000, 38009),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 40000, 40006),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 42000, 42005),
+
+#Not merge
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr'], 0, 10),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1'], 0, 10),
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr'], 60, 70),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1'], 300, 310),
+]
+
+
+##
+##
+VERSION 3
+##
+## ADDED DELETE and REJECT
+
+activities_info = [
+#Merge and keep merged
+('NEW', ['NEW', 'NEW', 'neq'], 0, 10000),
+('NEW', ['NEW', 'neq', 'neww', 'New', 'New', 'New'], 10001, 20000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'neww', 'neww', 'neww'], 20001, 30000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'neww', 'neww', 'NEW-1', 'NEW-1', 'NEW-1', 'NEW-1'], 30001, 50000),
+('NEW', ['NEW', 'NEW', 'neq', 'neq', 'NEW-1', 'NEW-1', 'New', 'New', 'neww', 'neww', 'start', 'start', 'start', 'start'], 50001, 65000),
+('NEW', ['NEW', 'NEW', 'neq', 'neq', 'New', 'New', 'neww', 'neww', 'start', 'start', 'start', 'NEW-1', 'NEW-1', 'NEW-1', 'NEW-1'], 65001, 80000),
+('NEW', ['NEW', 'start', 'start'], 80001, 80500),
+('NEW', ['NEW', 'NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'start', 'start', 'start', 'start' ], 80501, 101289),
+
+('FIN', ['FIN', 'FIN', 'Fin', 'Fin', 'Fin', 'fin - 111'], 0, 10000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 111', 'fin - 222'], 10001, 30000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 222', 'fin - 222', 'fin - 222', 'Over'], 30001, 50000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over', 'Over', 'Over', 'Over'], 50001, 74738),
+
+('RELEASE', ['RELEASE', 'RELEASE', 'release'], 0, 10000),
+('RELEASE', ['RELEASE', 'release', 'release', 'release1'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release1', 'release1', 'release2'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'release2', 'release2', 'release2', 'output'], 20001, 30000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'output', 'output', 'output', 'output', 'output', 'Release'], 30001, 40000),
+('RELEASE', ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release1', 'release2', 'output', 'Release','Release', 'Release', 'Release', 'Disperse'], 40001, 50000),
+('RELEASE', ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release1', 'release2', 'output', 'Release', 'Disperse', 'Disperse', 'Disperse', 'Disperse'], 50001, 70926),
+
+('DELETE', ['DELETE', 'DELETE', 'remove'], 0, 1000),
+('DELETE', ['DELETE', 'remove', 'clr', 'Delete', 'Delete', 'Delete'], 1001, 2000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'delete1', 'delete1'], 2001, 3000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'delete1', 'DEL', 'DEL', 'DEL', 'DEL'], 3001, 5000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'remove', 'DEL', 'DEL', 'Delete', 'Delete', 'delete1', 'delete1', 'clr', 'clr', 'clr', 'clr'], 5001, 6500),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'clr', 'clr', 'clr', 'DEL', 'DEL', 'DEL', 'DEL'], 6501, 8000),
+('DELETE', ['DELETE', 'clr', 'clr'], 8001, 8200),
+('DELETE', ['DELETE', 'DELETE', 'DELETE', 'remove', 'Delete', 'Delete', 'delete1', 'clr', 'clr', 'clr', 'clr'], 8201, 8225),
+
+
+#Merge and split
+('CODE OK', ['CODE OK', 'CODE OK', 'CODE OK', 'code ok', 'code ok'], 0, 2000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code good', 'code good', 'code OK'], 2001, 5000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code OK', 'code OK', 'code OK'], 5001, 7000),
+('CODE OK', ['CODE OK', 'code good', 'code good', 'code good', 'CODE'], 7001, 8000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'code good', 'CODE', 'CODE', 'CODE', 'CODE', 'CODE'], 8001, 15000),
+('CODE OK', ['CODE OK', 'code ok', 'code ok', 'code ok', 'code ok', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'code good', 'CODE', 'CODE', 'CODE'], 15001, 20000),
+('CODE OK', ['CODE OK', 'CODE OK', 'CODE OK', 'code ok', 'code OK', 'CODE OK', 'CODE OK', 'code good', 'code good', 'CODE'], 20001, 34003),
+#splitting starts
+('CODE OK', ['code ok'], 36701, 36703),
+('CODE OK', ['code OK'], 36900, 36902),
+('CODE OK', ['code good'], 39000, 39002),
+('CODE OK', ['code ok'], 60000, 60002),
+('CODE OK', ['code OK'], 63000, 63002),
+('CODE OK', ['code good'], 65000, 65002),
+
+#Merge and split
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'Billed', 'Billed'], 0, 2000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'billed', 'billed', 'charged'], 2001, 5000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'charged', 'charged', 'charged'], 5001, 7000),
+('BILLED', ['BILLED', 'charged', 'charged', 'charged'], 7001, 8000),
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'BILLED', 'Billed', 'billed', 'charged'], 8001, 15000),
+('BILLED', ['BILLED', 'BILLED', 'charged', 'charged', 'charged', 'Billed', 'billed'], 15000, 20000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billed'], 20001, 24000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billedd', 'billed', 'billed', 'billed', 'charged'], 24001, 33724),
+#splitting starts
+('BILLED', ['Billed', 'Billed'], 36701, 36703),
+('BILLED', ['billed', 'billed'], 36901, 36903),
+('BILLED', ['charged', 'charged'], 39000, 39003),
+('BILLED', ['Billed', 'Billed'], 60000, 60003),
+('BILLED', ['billed', 'billed'], 63000, 63003),
+('BILLED', ['charged', 'charged'], 65000, 65003),
+
+#Merge and split
+('CHANGE DIAGN', ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 2'], 0, 2000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 3'], 2001, 5000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3', 'Update Diagn'], 5001, 7000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 7001, 8000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn'], 8001, 15000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 15001, 22724),
+#splitting starts
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 25000, 25004),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 29000, 29004),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 31000, 31004),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 34000, 34004),
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 36000, 36004),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 38000, 38004),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 40000, 40004),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 42000, 42004),
+
+#Merge and split
+('REJECT', ['REJECT', 'REJECT', 'REJECT', 'refuse', 'refuse'], 0, 400),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Rejectt', 'Reject', 'Reject', 'Reject'], 401, 800),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Reject', 'REJECT111', 'REJECT111'], 801, 1200),
+('REJECT', ['REJECT', 'Rejectt', 'Reject', 'Reject', 'Disapprove', 'REJECT111', 'refuse', 'refuse', 'refuse', 'refuse', 'refuse', 'Disapprove'], 1201, 1600),
+('REJECT', ['REJECT', 'REJECT', 'refuse', 'Reject', 'Reject', 'Disapprove', 'Disapprove', 'Disapprove', 'REJECT111', 'REJECT111'], 1601, 1900),
+#splitting starts
+('REJECT', ['refuse'], 1901, 1905),
+('REJECT', ['Rejectt'], 1921, 1926),
+('REJECT', ['Reject'], 1941, 1946),
+('REJECT', ['Disapprove'], 1961, 1966),
+('REJECT', ['REJECT111'], 1981, 1986),
+('REJECT', ['REJECT222'], 2001, 2005),
+
+#Not merge
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr'], 0, 4),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1'], 0, 4),
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr'], 60, 64),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1'], 300, 304),
+]
+
+
+##
+##
+VERSION 4
+##
+## NEW VARIATIONS ADDED SOME INTERVALS CHANGED + other new activities
+
+activities_info = [
+#Merge and keep merged
+('NEW', ['NEW', 'NEW', 'neq'], 0, 5000),
+('NEW', ['NEW', 'NEW', 'neq', 'neq', 'neq'], 5001, 10000),
+('NEW', ['NEW', 'neq', 'neww', 'New', 'New', 'New', 'neww', 'neww', 'New'], 10001, 20000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'NEW', 'NEW', 'NEW', 'start'], 20001, 25000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'neww', 'neww', 'neww', 'NEW', 'NEW', 'NEW'], 25001, 30000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'neww', 'neww', 'NEW-1', 'NEW-1', 'NEW-1', 'NEW-1', 'start'], 30001, 50000),
+('NEW', ['neq', 'neq', 'NEW-1', 'NEW-1', 'New', 'New', 'neww', 'neww', 'start', 'start', 'start', 'start'], 50001, 63000),
+('NEW', ['NEW', 'NEW', 'neq', 'neq', 'NEW-1', 'NEW-1', 'New', 'New', 'neww', 'neww', 'start', 'start', 'start', 'start'], 63001, 65000),
+('NEW', ['NEW', 'NEW', 'neq', 'neq', 'New', 'New', 'neww', 'neww', 'start', 'start', 'start', 'NEW-1', 'NEW-1', 'NEW-1', 'NEW-1'], 65001, 80000),
+('NEW', ['NEW', 'start', 'start', 'NEW-1'], 80001, 80500),
+('NEW', ['NEW', 'NEW', 'NEW', 'neq', 'New', 'New', 'neww', 'start', 'start', 'start', 'start','NEW-1'], 80501, 101289),
+
+('FIN', ['FIN', 'FIN', 'Fin', 'Fin', 'Fin', 'fin - 111', 'Finished'], 0, 5000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'Finished', 'Finished', 'Finished', 'Finished'], 5001, 10000),
+('FIN', ['FIN', 'Finished', 'Fin', 'fin - 111', 'fin - 111', 'fin - 111', 'fin - 222'], 10001, 30000),
+('FIN', ['FIN', 'Finished', 'Fin', 'fin - 111', 'fin - 111', 'fin - 222', 'fin - 222', 'fin - 222', 'Over', 'Over'], 30001, 50000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over', 'Over', 'Over', 'Over', 'Finished'], 50001, 74738),
+
+('RELEASE', ['RELEASE', 'RELEASE', 'release', 'release', 'release'], 0, 5000),
+('RELEASE', ['RELEASE', 'RELEASE', 'release'], 5001, 10000),
+('RELEASE', ['RELEASE', 'release', 'release', 'release1'], 10001, 15000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release1', 'release1', 'release2', 'relse'], 15001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'release2', 'release2', 'release2', 'output', 'relse'], 20001, 30000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'output', 'output', 'output', 'output', 'output', 'Release'], 30001, 40000),
+('RELEASE', ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release1', 'release2', 'output', 'Release','Release', 'Release', 'Release', 'Disperse'], 40001, 50000),
+('RELEASE', ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release1', 'release2', 'output', 'relse','relse', 'relse', 'relse', 'Disperse'], 50001, 60000),
+('RELEASE', ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release1', 'release2', 'output', 'Release', 'Disperse', 'Disperse', 'Disperse', 'Disperse'], 60001, 70926),
+
+('DELETE', ['DELETE', 'DELETE', 'remove'], 0, 1000),
+('DELETE', ['DELETE', 'remove', 'clr', 'Delete', 'Delete', 'Delete'], 1001, 2000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'delete1', 'delete1'], 2001, 3000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'delete1', 'DEL', 'DEL', 'DEL', 'DEL'], 3001, 4000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'delete1', 'delete2', 'delete2', 'delete2', 'delete2'], 4001, 5000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'remove', 'DEL', 'DEL', 'Delete', 'Delete', 'delete1', 'delete1', 'clr', 'clr', 'clr', 'clr'], 5001, 6500),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'clr', 'clr', 'clr', 'DEL', 'DEL', 'DEL', 'DEL'], 6501, 7000),
+('DELETE', ['DELETE', 'DELETE', 'remove', 'remove', 'Delete', 'Delete', 'delete1', 'delete1', 'clr', 'clr', 'clr', 'delete++', 'delete++', 'delete++', 'delete++'], 7001, 8000),
+('DELETE', ['DELETE', 'remove', 'remove'], 8001, 8200),
+('DELETE', ['DELETE', 'DELETE', 'DELETE', 'clr', 'Delete', 'Delete', 'delete1', 'delete2', 'remove', 'remove', 'remove', 'remove'], 8201, 8225),
+
+('REOPEN', ['REOPEN', 'Again New','Again New', 'Again New', 'Again New', 'Again New' ], 0, 1000),
+('REOPEN', ['REOPEN', 'Again New', 'Re-Open', 'Re-Open', 'Re-Open', 'Re-Open', 'Re-Open'], 1001, 2000),
+('REOPEN', ['REOPEN', 'Re-Open', 'Again New', 'Reopn', 'Reopen', 'Reopen', 'Reopen', 'Reopen' 'Reopen', 'Reopen'], 2001, 3000),
+('REOPEN', ['REOPEN', 'Re-Open', 'Again New', 'Reopn', 'Reopen', 'Reopen', 'REOPEN', 'REOPEN' 'REOPEN', 'REOPEN'], 3001, 4669),
+
+('CODE NOK', ['CODE NOK', 'Code not ok', 'Code not ok', 'Code not ok' 'Code not ok', 'Code not ok'], 0, 500),
+('CODE NOK', ['CODE NOK', 'Code not ok', 'Code Not OK', 'Code Not OK', 'Code Not OK', 'Code Not OK' 'Code Not OK', 'Code Not OK'], 501, 1000),
+('CODE NOK', ['CODE NOK', 'Source not good', 'Code Not OK', 'Code not ok', 'Source not good', 'Source not good', 'Source not good' 'Source not good', 'Source not good'], 1001, 2500),
+('CODE NOK', ['CODE NOK', 'Source not good', 'Code Not OK', 'Code not ok', 'Source not good', 'Source not good', 'code nok', 'code nok', 'code nok', 'code nok', 'code nok', 'code nok'], 2501, 3620),
+
+#Merge and split
+('CODE OK', ['CODE OK', 'CODE OK', 'CODE OK', 'code ok', 'code ok'], 0, 2000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code good', 'code OK'], 2001, 3500),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code OK', 'Script OK', 'Script OK', 'Script OK'], 3501, 5000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'code OK', 'code OK', 'code OK', 'Script OK'], 5001, 6000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'code good', 'Source Good', 'Script OK'], 6001, 7000),
+('CODE OK', ['CODE OK', 'code good', 'code good', 'code good', 'CODE', 'Script OK'], 7001, 8000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'code good', 'CODE', 'CODE', 'CODE', 'CODE', 'CODE', 'Script OK', 'Source Good'], 8001, 10000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'CODE', 'Script OK', 'Script OK', 'Script OK', 'Script OK', 'Script OK', 'Source Good'], 10001, 15000),
+('CODE OK', ['CODE OK', 'code ok', 'code ok', 'code ok', 'code ok', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'code good', 'CODE', 'CODE', 'CODE', 'Script OK', 'Source Good'], 15001, 20000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'code good', 'code good', 'CODE', 'Script OK', 'Script OK', 'Source Good', 'Source Good', 'Source Good', 'Source Good'], 20001, 25000),
+('CODE OK', ['CODE OK', 'CODE OK', 'CODE OK', 'code ok', 'code OK', 'CODE OK', 'CODE OK', 'code good', 'code good', 'CODE', 'Script OK', 'Source Good'], 25001, 34003),
+#splitting starts
+('CODE OK', ['code ok', 'code ok'], 36701, 36703),
+('CODE OK', ['code OK', 'code OK'], 36900, 36902),
+('CODE OK', ['CODE', 'CODE'], 37900, 37902),
+('CODE OK', ['code good', 'code good'], 39000, 39002),
+('CODE OK', ['Script OK', 'Script OK'], 39003, 39008),
+('CODE OK', ['Source Good', 'Source Good'], 39009, 39012),
+
+('CODE OK', ['code ok', 'code ok'], 60000, 60002),
+('CODE OK', ['Script OK', 'code OK'], 61000, 61003),
+('CODE OK', ['Source Good', 'Source Good'], 62009, 62012),
+('CODE OK', ['code OK', 'code OK'], 63000, 63002),
+('CODE OK', ['CODE', 'CODE'], 64900, 64902),
+('CODE OK', ['code good', 'code good'], 65000, 65002),
+
+#Merge and split
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'Billed', 'Billed'], 0, 2000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'billed', 'billed', 'charged'], 2001, 3000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'charged', 'charged', 'charged', 'Invoiced'], 3001, 5000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'charged', 'Invoiced', 'Invoiced', 'Invoiced'], 5001, 7000),
+('BILLED', ['BILLED', 'charged', 'charged', 'charged', 'Invoiced'], 7001, 8000),
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'BILLED', 'Billed', 'billed', 'charged', 'Invoiced', 'Invoiced', 'Invoiced', 'Invoiced'], 8001, 15000),
+('BILLED', ['BILLED', 'BILLED', 'charged', 'charged', 'charged', 'Billed', 'billed', 'Invoiced'], 15000, 20000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billed'], 20001, 24000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billedd', 'billed', 'billed', 'billed', 'charged', 'Invoiced', 'Invoiced'], 24001, 33724),
+#splitting starts
+('BILLED', ['Billed', 'Billed'], 36701, 36703),
+('BILLED', ['Invoiced', 'Invoiced'], 36801, 36803),
+('BILLED', ['billed', 'billed'], 36901, 36903),
+('BILLED', ['charged', 'charged'], 39000, 39003),
+('BILLED', ['Billed', 'Billed'], 60000, 60003),
+('BILLED', ['Invoiced', 'Invoiced'], 61000, 61003),
+('BILLED', ['billed', 'billed'], 63000, 63003),
+('BILLED', ['charged', 'charged'], 65000, 65003),
+
+#Merge and split
+('CHANGE DIAGN', ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 2'], 0, 2000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 3'], 2001, 5000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3', 'Update Diagn'], 5001, 7000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 7001, 8000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Recorrect Diagnosis'], 8001, 10000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis'], 10001, 15000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Update Diagn', 'Recorrect Diagnosis'], 15001, 22724),
+#splitting starts
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 25000, 25004),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 29000, 29004),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 31000, 31004),
+('CHANGE DIAGN', ['Recorrect Diagnosis', 'Recorrect Diagnosis'], 32000, 32004),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 34000, 34004),
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 36000, 36004),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 38000, 38004),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 40000, 40004),
+('CHANGE DIAGN', ['Recorrect Diagnosis', 'Recorrect Diagnosis'], 41000, 41004),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 42000, 42004),
+
+#Merge and split
+('REJECT', ['REJECT', 'REJECT', 'REJECT', 'refuse', 'refuse', 'refuse', 'refuse'], 0, 200),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Rejectt', 'Reject', 'Reject', 'Reject'], 201, 400),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Reject', 'REJECT111', 'Decline', 'Decline', 'Decline', 'Decline', 'Decline'], 401, 600),
+('REJECT', ['REJECT', 'REJECT', 'refuse', 'Reject', 'Reject', 'Disapprove', 'Disapprove', 'Disapprove', 'REJECT111', 'REJECT111', 'Decline'], 601, 800),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Reject', 'REJECT111', 'REJECT111', 'Decline'], 801, 1008),
+#splitting starts
+('REJECT', ['refuse', 'refuse'], 1101, 1105),
+('REJECT', ['Rejectt', 'Rejectt'], 1221, 1226),
+('REJECT', ['Reject', 'Reject'], 1341, 1346),
+('REJECT', ['Disapprove', 'Disapprove'], 1461, 1466),
+('REJECT', ['REJECT111', 'REJECT111'], 1581, 1586),
+('REJECT', ['REJECT222', 'REJECT222'], 1601, 1605),
+('REJECT', ['Reject', 'Reject'], 1741, 1746),
+('REJECT', ['Disapprove', 'Disapprove'], 1861, 1866),
+('REJECT', ['refuse', 'refuse'], 1901, 1905),
+
+#Merge and split
+('SET STATUS', ['SET STATUS', 'Post Current', 'Post Current', 'Post Current', 'Post Current'], 0, 150),
+('SET STATUS', ['SET STATUS', 'Post Current', 'Post Current', 'SET STATUS', 'SET STATUS', 'SET STATUS', 'SET STATUS'], 151, 250),
+('SET STATUS', ['SET STATUS', 'Post Current', 'set status', 'set status', 'set status', 'set status', 'set status'], 251, 350),
+#splitting starts
+('SET STATUS', ['Post Current', 'Post Current'], 400, 403),
+('SET STATUS', ['set status', 'set status'], 460, 463),
+('SET STATUS', ['Post Current', 'Post Current'], 600, 603),
+('SET STATUS', ['set status', 'set status'], 660, 663),
+
+#Merge and split
+('EMPTY', ['EMPTY', 'Nothing', 'Nothing', 'Nothing', 'Nothing'], 0, 50),
+('EMPTY', ['EMPTY', 'Nothing', 'empty', 'empty', 'empty', 'empty', 'empty'], 51, 100),
+('EMPTY', ['EMPTY', 'empty', 'Nothing', 'Nothing', 'EMTY', 'EMTY', 'EMTY'], 101, 150),
+('EMPTY', ['EMPTY', 'empty', 'Nothing', 'EMTY', 'Empty', 'Empty', 'Empty', 'Empty'], 151, 200),
+#splitting starts
+('EMPTY', ['Nothing', 'Nothing'], 280, 283),
+('EMPTY', ['empty', 'empty'], 300, 303),
+('EMPTY', ['EMTY', 'EMTY'], 310, 313),
+('EMPTY', ['Empty', 'Empty'], 320, 323),
+('EMPTY', ['Nothing', 'Nothing'], 380, 383),
+('EMPTY', ['empty', 'empty'], 400, 403),
+('EMPTY', ['EMTY', 'EMTY'], 410, 413),
+('EMPTY', ['Empty', 'Empty'], 420, 423),
+
+
+#Not merge
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr', 'BUG'], 10, 15),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1', 'JOIN-PAT2'], 10, 15),
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr', 'BUG'], 50, 55),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1', 'JOIN-PAT2'], 310, 315),
+]
+
+
+##
+##
+VERSION 5
+##
+## NEW VARIATIONS ADDED SOME INTERVALS CHANGED + all other new activities
+
+activities_info = [
+#Merge and keep merged
+('NEW', ['NEW', 'NEW', 'neq'], 0, 5000),
+('NEW', ['NEW', 'neq', 'New', 'neww', 'New', 'New'], 5001, 10000),
+('NEW', ['NEW', 'neq', 'New', 'neww', 'New', 'neww', 'neww'], 10001, 20000),
+('NEW', ['NEW', 'NEW', 'neq', 'neq', 'neq', 'New', 'start'], 20001, 30000),
+('NEW', ['NEW', 'neq', 'neww', 'NEW-1', 'start', 'start', 'start', 'start'], 30001, 40000),
+('NEW', ['NEW-1', 'NEW-1','NEW-1', 'NEW-1', 'NEW-1', 'start', 'NEW', 'New', 'neq'], 40001, 50000),
+('NEW', ['NEW', 'NEW', 'NEW' 'neq', 'neww', 'NEW-1', 'start', 'NEW'], 50001, 63000),
+('NEW', ['NEW', 'NEW', 'start', 'New', 'neq', 'NEW-1'], 63001, 80000),
+('NEW', ['NEW', 'start', 'NEW-1', 'New', 'neq', 'NEW', 'NEW', 'NEW', 'NEW'], 80001, 101289),
+
+('FIN', ['FIN', 'FIN', 'Fin', 'Fin', 'Fin', 'fin - 111', 'Finished'], 0, 5000),
+('FIN', ['FIN', 'FIN', 'Fin', 'Fin', 'fin - 111', 'fin - 111', 'fin - 111', 'fin - 111'], 5001, 10000),
+('FIN', ['Fin', 'fin - 111', 'Finished', 'fin - 222', 'fin - 222', 'FIN', 'fin - 222'], 10001, 25000),
+('FIN', ['Finished', 'FIN', 'FIN', 'fin - 222', 'Over', 'Finished', 'Over', 'Over', 'Over', 'Over'], 25001, 40000),
+('FIN', ['FIN', 'Finished', 'Fin', 'fin - 111', 'fin - 111', 'fin - 222', 'fin - 222', 'fin - 222', 'Over', 'Over'], 40001, 55000),
+('FIN', ['Over', 'FIN', 'fin - 222', 'fin - 111', 'Fin', 'Finished', ',Finished', 'Finished', 'Finished', ], 55001, 74738),
+
+('RELEASE', ['RELEASE', 'release', 'release'], 0, 10000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release1', 'release1'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release1', 'release2', 'output', 'output', 'output', 'output'], 20001, 30000),
+('RELEASE', ['RELEASE', 'release1', 'release2', 'Release', 'Disperse', 'Disperse', 'Disperse', 'Disperse', 'Disperse', 'Disperse', 'Disperse', 'Disperse', 'Disperse'], 30001, 40000),
+('RELEASE', ['RELEASE', 'release1', 'release2', 'Release', 'Disperse', 'output', 'output', 'output', 'output', 'output', 'output', 'output', 'output', 'output'], 40001, 50000),
+('RELEASE', ['RELEASE', 'Disperse', 'release', 'release1', 'release2', 'output', 'Disperse', 'Release', 'Release', 'Release', 'Release'], 50001, 70926),
+
+
+('DELETE', ['DELETE', 'remove', 'remove', 'remove', 'remove', 'remove', 'remove'], 0, 1000),
+('DELETE', ['DELETE', 'Delete', 'Delete', 'delete1', 'delete1', 'DEL', 'DEL', 'DEL','delete1', 'delete1', 'delete1'], 1001, 2000),
+('DELETE', ['DELETE', 'Delete', 'delete1', 'delete2', 'delete2', 'delete2', 'clr', 'delete2', 'clr', 'DEL', 'delete2'], 2001, 3000),
+('DELETE', ['DELETE', 'Delete', 'delete2', 'delete1', 'remove', 'clr', 'delete1', 'DEL',  'delete1', 'delete1', 'delete1'], 3001, 4000),
+('DELETE', ['DELETE', 'delete1', 'remove', 'DEL', 'clr', 'Delete', 'Delete', 'Delete', 'DEL', 'delete2', 'Delete'], 4001, 5000),
+('DELETE', ['DELETE', 'clr', 'DEL', 'Delete', 'remove', 'delete1', 'delete2' 'delete++', 'delete++'], 5001, 8225),
+
+('REOPEN', ['REOPEN', 'Again New','Again New', 'Again New', 'Again New', 'Again New' ], 0, 1000),
+('REOPEN', ['REOPEN', 'Again New', 'Re-Open', 'Re-Open', 'Re-Open', 'Re-Open', 'Re-Open'], 1001, 2000),
+('REOPEN', ['REOPEN', 'Re-Open', 'Again New', 'Reopn', 'Reopen', 'Reopen', 'Reopen', 'Reopen' 'Reopen', 'Reopen'], 2001, 3000),
+('REOPEN', ['REOPEN', 'Re-Open', 'Again New', 'Reopn', 'Reopen', 'Reopen', 'REOPEN', 'REOPEN' 'REOPEN', 'REOPEN'], 3001, 4669),
+
+('CODE NOK', ['CODE NOK', 'Code not ok', 'Code not ok', 'Code not ok' 'Code not ok', 'Code not ok'], 0, 500),
+('CODE NOK', ['CODE NOK', 'Code not ok', 'Code Not OK', 'Code Not OK', 'Code Not OK', 'Code Not OK' 'Code Not OK', 'Code Not OK'], 501, 1000),
+('CODE NOK', ['CODE NOK', 'Source not good', 'Code Not OK', 'Code not ok', 'Source not good', 'Source not good', 'Source not good' 'Source not good', 'Source not good'], 1001, 2500),
+('CODE NOK', ['CODE NOK', 'Source not good', 'Code Not OK', 'Code not ok', 'Source not good', 'Source not good', 'code nok', 'code nok', 'code nok', 'code nok', 'code nok', 'code nok'], 2501, 3620),
+
+('STORNO', ['STORNO', 'storno', 'storno'], 0, 400),
+('STORNO', ['STORNO', 'storno', 'storno', 'Strn', 'Strn', 'Strn', 'Strn' 'Strn', 'Strn'], 401, 900),
+('STORNO', ['STORNO', 'storno', 'Strn', 'STORNO - Store Number1', 'STORNO - Store Number1', 'STORNO - Store Number1', 'STORNO - Store Number1', 'STORNO - Store Number1'], 901, 1600),
+('STORNO', ['STORNO', 'storno', 'Strn', 'STORNO - Store Number1', 'STORNO - Store Number2', 'STORNO - Store Number2', 'STORNO - Store Number2', 'STORNO - Store Number2', 'STORNO', 'STORNO', 'STORNO', 'STORNO'], 1601, 2973),
+
+
+#Merge and split
+('CODE OK', ['CODE OK', 'code ok', 'CODE OK', 'code good', 'CODE OK', 'Script OK', 'Script OK', 'Script OK', 'Script OK'], 0, 2000),
+('CODE OK', ['CODE OK', 'code ok', 'code OK', 'code good', 'Script OK', 'code good', 'Script OK', 'Script OK', 'Script OK', 'Script OK'], 2001, 4000),
+('CODE OK', ['code good', 'code ok', 'CODE OK', 'Script OK', 'code good', 'CODE OK', 'Script OK', 'Source Good', 'Source Good', 'Source Good'], 4001, 6000),
+('CODE OK', ['CODE OK', 'code OK', 'CODE', 'Script OK', 'Source Good', 'Script OK', 'CODE', 'CODE', 'CODE', 'CODE'], 6001, 8000),
+('CODE OK', ['code good', 'Script OK', 'code good', 'CODE OK', 'CODE', 'Script OK', 'Source Good', 'Source Good', 'code good', 'code good', 'code good'], 8001, 10000),
+('CODE OK', ['CODE OK', 'CODE OK', 'code OK', 'code good', 'Script OK', 'Source Good', 'Script OK', 'Source Good', 'CODE OK', 'CODE OK', 'CODE OK', 'CODE OK'], 10001, 12000),
+('CODE OK', ['code good', 'CODE OK', 'Script OK', 'code good', 'CODE', 'Source Good', 'Source Good', 'Script OK', 'code ok', 'code ok', 'code ok'], 12001, 14000),
+('CODE OK', ['CODE OK', 'code good', 'Script OK', 'CODE', 'Source Good', 'Script OK', 'Source Good', 'code good', 'code ok', 'code good', 'code good'], 14001, 16000),
+('CODE OK', ['code good', 'CODE OK', 'Script OK', 'code good', 'CODE', 'Source Good', 'Script OK', 'Source Good', 'CODE', 'CODE', 'CODE', 'CODE', 'CODE'], 16001, 18000),
+('CODE OK', ['CODE OK', 'code ok', 'code good', 'Script OK', 'CODE', 'Source Good', 'Source Good', 'Source Good', 'Script OK', 'Script OK', 'Script OK', 'Script OK'], 18001, 20000),
+('CODE OK', ['CODE OK', 'CODE OK', 'code ok', 'code good', 'Script OK', 'Source Good', 'Source Good', 'Source Good', 'CODE', 'Script OK', 'CODE OK', 'CODE OK', 'CODE OK'], 20001, 22000),
+('CODE OK', ['code good', 'CODE OK', 'code ok', 'Script OK', 'CODE', 'Source Good', 'Source Good', 'Script OK', 'Source Good', 'Source Good', 'Source Good', 'Source Good', 'Source Good', 'Source Good'], 22001, 24000),
+('CODE OK', ['CODE OK', 'code good','code ok',  'Script OK', 'CODE', 'Source Good', 'Script OK', 'Source Good', 'CODE', 'CODE', 'CODE', 'CODE', 'CODE'], 24001, 26000),
+('CODE OK', ['CODE OK', 'code good', 'code ok', 'CODE', 'Script OK', 'Source Good', 'Source Good', 'Script OK'], 26001, 28000),
+('CODE OK', ['CODE OK', 'CODE OK', 'code ok', 'code good', 'Script OK', 'Source Good', 'Source Good', 'Script OK', 'code ok', 'code ok', 'code ok', 'code ok'], 28001, 30000),
+('CODE OK', ['code good', 'CODE OK', 'code ok', 'Script OK', 'CODE', 'Source Good', 'Source Good', 'Source Good', 'Script OK', 'CODE OK', 'CODE OK', 'CODE OK'], 30001, 32000),
+('CODE OK', ['CODE OK', 'CODE OK', 'code good', 'code ok', 'Script OK', 'Source Good', 'Source Good', 'Source Good', 'Script OK', 'Source Good', 'Source Good', 'Source Good'], 32001, 34003),
+
+#splitting starts
+('CODE OK', ['code ok', 'code ok'], 35701, 35703),
+('CODE OK', ['code OK', 'code OK'], 35900, 35902),
+('CODE OK', ['CODE', 'CODE'], 36900, 36902),
+('CODE OK', ['code good', 'code good'], 38000, 38002),
+('CODE OK', ['Script OK', 'Script OK'], 38003, 38008),
+('CODE OK', ['Source Good', 'Source Good'], 38009, 38012),
+('CODE OK', ['code ok', 'code ok'], 59000, 59002),
+('CODE OK', ['Script OK', 'code OK'], 60000, 60003),
+('CODE OK', ['Source Good', 'Source Good'], 60009, 60012),
+('CODE OK', ['code OK', 'code OK'], 62000, 62002),
+('CODE OK', ['CODE', 'CODE'], 63900, 63902),
+('CODE OK', ['code good', 'code good'], 65000, 65002),
+
+#Merge and split
+('BILLED', ['BILLED', 'BILLED', 'BILLED', 'Billed', 'Billed', 'billed', 'Billed', 'Billed'], 0, 3000),
+('BILLED', ['BILLED', 'Billed', 'billed', 'charged', 'Invoiced', 'charged', 'Invoiced', 'charged', 'charged', 'charged', 'charged'], 3001, 6000),
+('BILLED', ['BILLED', 'charged', 'Invoiced', 'Billed', 'charged', 'Invoiced', 'billed', 'billed', 'billed', 'billed'], 6001, 9000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'charged', 'billed', 'charged', 'Invoiced', 'Invoiced', 'Invoiced', 'Invoiced', 'Invoiced'], 9001, 12000),
+('BILLED', ['BILLED', 'charged', 'charged', 'Invoiced', 'Billed', 'charged', 'Invoiced', 'billed', 'billed', 'billed', 'billed'], 12001, 15000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billedd', 'billed', 'charged', 'Invoiced', 'Invoiced', 'billed', 'Billed', 'Billed', 'Billed', 'Billed'], 15001, 18000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'charged', 'billed', 'charged', 'Invoiced', 'Invoiced', 'Invoiced', 'Invoiced'], 18001, 21000),
+('BILLED', ['BILLED', 'charged', 'charged', 'Invoiced', 'Billed', 'charged', 'Invoiced', 'billed', 'charged', 'charged', 'charged'], 21001,24000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'charged', 'billed', 'charged', 'Invoiced', 'Invoiced', 'BILLED', 'BILLED', 'BILLED', 'BILLED'], 24001, 27000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'billedd', 'billed', 'charged', 'Invoiced', 'Invoiced', 'billed', 'charged', 'Billed', 'Billed', 'Billed', 'Billed', 'Billed'], 27001,30000),
+('BILLED', ['BILLED', 'BILLED', 'Billed', 'charged', 'billed', 'charged', 'Invoiced', 'Invoiced', 'billed', 'Invoiced', 'Invoiced', 'Invoiced', 'Invoiced', 'Invoiced'], 30001, 33724),
+
+#splitting starts
+('BILLED', ['Billed', 'Billed'], 36601, 36603),
+('BILLED', ['Invoiced', 'Invoiced'], 36701, 36703),
+('BILLED', ['billed', 'billed'], 36801, 36803),
+('BILLED', ['charged', 'charged'], 39100, 39103),
+('BILLED', ['Billed', 'Billed'], 60100, 60103),
+('BILLED', ['charged', 'charged'], 61000, 61003),
+('BILLED', ['Invoiced', 'Invoiced'], 62000, 62003),
+('BILLED', ['billed', 'billed'], 64000, 64003),
+
+#Merge and split
+('CHANGE DIAGN', ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 1', 'Change Diagn 1'], 0, 1500),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 3'], 1501, 3000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Change Diagn 3', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2'], 3001, 4500),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 3', 'Update Diagn', 'Change Diagn 2', 'Update Diagn', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 4501, 6000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Update Diagn', 'Change Diagn 3', 'Update Diagn', 'Change Diagn 3', 'Update Diagn', 'Change Diagn 1', 'Change Diagn 2', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 6001, 7500),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 3', 'Change Diagn 2', 'Update Diagn', 'Update Diagn', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis'], 7501, 9000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Update Diagn', 'Recorrect Diagnosis', 'Change Diagn 1', 'Change Diagn 2', 'Recorrect Diagnosis', 'Recorrect Diagnosis'], 9001, 10500),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Update Diagn', 'Update Diagn', 'Update Diagn', 'Update Diagn', 'Update Diagn', 'Update Diagn'], 10501, 12000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 3', 'Change Diagn 2', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Update Diagn', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 1', 'Change Diagn 1'], 12001, 13500),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 2',  'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Update Diagn', 'Change Diagn 1', 'Change Diagn 3', 'Update Diagn', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis'], 13501, 15000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Update Diagn', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2', 'Change Diagn 2'], 15001, 16500),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Recorrect Diagnosis', 'Update Diagn', 'CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'CHANGE DIAGN', 'Recorrect Diagnosis', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN'], 16501, 18000),
+('CHANGE DIAGN', ['CHANGE DIAGN', 'Change Diagn 1', 'Change Diagn 2', 'Change Diagn 3', 'Update Diagn', 'Update Diagn', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis', 'Recorrect Diagnosis'], 18001, 22724),
+#splitting starts
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 26000, 26004),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 28000, 28004),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 32000, 32004),
+('CHANGE DIAGN', ['Recorrect Diagnosis', 'Recorrect Diagnosis'], 33000, 33004),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 35000, 35004),
+('CHANGE DIAGN', ['Change Diagn 1', 'Change Diagn 1'], 37000, 37004),
+('CHANGE DIAGN', ['Change Diagn 2', 'Change Diagn 2'], 39000, 39004),
+('CHANGE DIAGN', ['Change Diagn 3', 'Change Diagn 3'], 40100, 40104),
+('CHANGE DIAGN', ['Recorrect Diagnosis', 'Recorrect Diagnosis'], 41200, 41204),
+('CHANGE DIAGN', ['Update Diagn', 'Update Diagn'], 42100, 42104),
+
+#Merge and split
+('REJECT', ['REJECT', 'REJECT', 'REJECT', 'refuse', 'refuse', 'refuse', 'refuse'], 0, 200),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Rejectt', 'Reject', 'Reject', 'Reject'], 201, 400),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Reject', 'REJECT111', 'Decline', 'Decline', 'Decline', 'Decline', 'Decline'], 401, 600),
+('REJECT', ['REJECT', 'REJECT', 'refuse', 'Reject', 'Reject', 'Disapprove', 'Disapprove', 'Disapprove', 'REJECT111', 'REJECT111', 'Decline'], 601, 800),
+('REJECT', ['REJECT', 'refuse', 'Rejectt', 'Reject', 'REJECT111', 'REJECT111', 'Decline'], 801, 1008),
+#splitting starts
+('REJECT', ['refuse', 'refuse'], 1201, 1205),
+('REJECT', ['Rejectt', 'Rejectt'], 1321, 1326),
+('REJECT', ['Reject', 'Reject'], 1441, 1446),
+('REJECT', ['Disapprove', 'Disapprove'], 1561, 1566),
+('REJECT', ['REJECT111', 'REJECT111'], 1681, 1686),
+('REJECT', ['REJECT222', 'REJECT222'], 1701, 1705),
+('REJECT', ['Reject', 'Reject'], 1841, 1846),
+('REJECT', ['refuse', 'refuse'], 1911, 1915),
+('REJECT', ['Disapprove', 'Disapprove'], 1961, 1966),
+
+#Merge and split
+('SET STATUS', ['SET STATUS', 'Post Current', 'Post Current', 'Post Current', 'Post Current'], 0, 150),
+('SET STATUS', ['SET STATUS', 'Post Current', 'Post Current', 'SET STATUS', 'SET STATUS', 'SET STATUS', 'SET STATUS'], 151, 250),
+('SET STATUS', ['SET STATUS', 'Post Current', 'set status', 'set status', 'set status', 'set status', 'set status'], 251, 350),
+#splitting starts
+('SET STATUS', ['Post Current', 'Post Current'], 400, 403),
+('SET STATUS', ['set status', 'set status'], 460, 463),
+('SET STATUS', ['Post Current', 'Post Current'], 600, 603),
+('SET STATUS', ['set status', 'set status'], 660, 663),
+
+#Merge and split
+('EMPTY', ['EMPTY', 'Nothing', 'Nothing', 'Nothing', 'Nothing'], 0, 50),
+('EMPTY', ['EMPTY', 'Nothing', 'empty', 'empty', 'empty', 'empty', 'empty'], 51, 100),
+('EMPTY', ['EMPTY', 'empty', 'Nothing', 'Nothing', 'EMTY', 'EMTY', 'EMTY'], 101, 150),
+('EMPTY', ['EMPTY', 'empty', 'Nothing', 'EMTY', 'Empty', 'Empty', 'Empty', 'Empty'], 151, 200),
+#splitting starts
+('EMPTY', ['Nothing', 'Nothing'], 280, 283),
+('EMPTY', ['empty', 'empty'], 300, 303),
+('EMPTY', ['EMTY', 'EMTY'], 310, 313),
+('EMPTY', ['Empty', 'Empty'], 320, 323),
+('EMPTY', ['Nothing', 'Nothing'], 380, 383),
+('EMPTY', ['empty', 'empty'], 400, 403),
+('EMPTY', ['EMTY', 'EMTY'], 410, 413),
+('EMPTY', ['Empty', 'Empty'], 420, 423),
+
+#Merge and split
+('MANUAL', ['MANUAL', 'manual', 'manual', 'manual', 'manual'], 0, 50),
+('MANUAL', ['MANUAL', 'manual', 'Not Auto', 'Not Auto', 'Not Auto', 'Not Auto', 'Not Auto'], 51, 90),
+('MANUAL', ['MANUAL', 'manual', 'manual', 'Not Auto', 'Not Auto', 'Physical', 'Physical', 'Physical', 'Physical', 'Physical', 'Physical'], 91, 150),
+#splitting starts
+('MANUAL', ['manual', 'manual'], 340, 343),
+('MANUAL', ['Not Auto', 'Not Auto'], 350, 353),
+('MANUAL', ['Physical', 'Physical'], 360, 363),
+
+
+#Not merge
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr', 'BUG'], 10, 15),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1', 'JOIN-PAT2'], 10, 15),
+('CHANGE END', ['CHANGE END', 'Update end', 'Change End', 'Change last', 'CHANGE-END'], 10, 14),
+('CODE ERROR', ['CODE ERROR', 'CODE ANOMALY', 'error', 'Erroor', 'CodeErr', 'BUG'], 50, 55),
+('JOIN-PAT', ['JOIN-PAT', 'JoinPat', 'JoinP', 'Group-Pat', 'JOIN-PAT1', 'JOIN-PAT2'], 310, 315),
+('CHANGE END', ['CHANGE END', 'Update end', 'Change End', 'Change last', 'CHANGE-END'], 25, 29),
+('ZDBC_BEHAN', ['ZDBC_'], 0, 1)
+]
+
+
+Only for NEW
+#1
+activities_info = [
+#Merge and keep merged
+('NEW', ['NEW', 'NEW'], 0, 10000),
+('NEW', ['NEW', 'neq', 'New', 'New', 'New'], 10001, 20000),
+('NEW', ['NEW', 'neq', 'New', 'New', 'New', 'neww', 'New', 'New'], 20001, 50000),
+('NEW', ['NEW', 'NEW', 'neq', 'New', 'New', 'New', 'neww', 'start', 'start', 'start', 'start'], 50001, 80000),
+('NEW', ['NEW', 'neq', 'New', 'neww', 'start', 'start', 'start', 'NEW-1', 'NEW-1', 'NEW-1', 'NEW-1', 'NEW-1'], 80001, 101289)
+]
+
+#2
+activities_info = [
+#Merge and keep merged
+('NEW', ['NEW'], 0, 10000),
+('NEW', ['NEW', 'neq', 'neq'], 10001, 20000),
+('NEW', ['NEW', 'neq', 'New', 'New', 'New'], 20001, 30000),
+('NEW', ['NEW', 'neq', 'New', 'neww', 'neww', 'neww', 'neww'], 30001, 50000),
+('NEW', ['NEW', 'neq', 'New', 'neww', 'start', 'start', 'start', 'start', 'start'], 50001, 80000),
+('NEW', ['NEW', 'neq', 'New', 'neww', 'start', 'NEW-1','NEW-1','NEW-1','NEW-1','NEW-1','NEW-1'], 80001, 101289)
+]
+
+Only for RELEASE
+activities_info = [
+('RELEASE', ['RELEASE'], 0, 10000),
+('RELEASE', ['RELEASE', 'release', 'release'], 10001, 20000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release1', 'release1'], 20001, 30000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'release2', 'release2', 'release2'], 30001, 40000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'output', 'output', 'output', 'output', 'output'], 40001, 50000),
+('RELEASE', ['RELEASE', 'release', 'release1', 'release2', 'output', 'Release','Release', 'Release', 'Release', 'Release', 'Release'], 50001, 70926)
+]
+
+
+Only for FIN
+activities_info = [
+('FIN', ['FIN'], 0, 10000),
+('FIN', ['FIN', 'Fin', 'Fin'], 10001, 20000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 111'], 20001, 30000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'fin - 222', 'fin - 222', 'fin - 222'], 30001, 40000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over','Over','Over','Over','Over'], 40001, 50000),
+('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over', 'finished', 'finished', 'finished', 'finished', 'finished', 'finished'], 50001, 74738)
+]
+
+#Only for NEW - second
+activities_info = [
+    # Merge and keep merged
+    ('NEW', ['NEW'], 0, 20000),
+    ('NEW', ['NEW', 'new', 'new'], 20001, 40000),
+    ('NEW', ['NEW', 'new', 'New', 'New', 'New'], 40001, 60000),
+    ('NEW', ['NEW', 'new', 'New', 'neew', 'neew', 'neew', 'neew'], 60001, 80000),
+    ('NEW', ['NEW', 'new', 'New', 'neew', 'begin', 'begin', 'begin', 'begin', 'begin'], 80001, 95000),
+    ('NEW', ['NEW', 'new', 'New', 'neew', 'begin', 'NEW_1', 'NEW_1', 'NEW_1', 'NEW_1', 'NEW_1', 'NEW_1'], 95001, 101289)
+]
+
+#Only for RELEASE - second
+activities_info = [
+    ('RELEASE', ['RELEASE'], 0, 10000),
+    ('RELEASE', ['RELEASE', 'release', 'release'], 10001, 25000),
+    ('RELEASE', ['RELEASE', 'release', 'Release1', 'Release1', 'Release1'], 25001, 35000),
+    ('RELEASE', ['RELEASE', 'release', 'Release1', 'Release2', 'Release2', 'Release2', 'Release2'], 35001, 50000),
+    ('RELEASE', ['RELEASE', 'release', 'Release1', 'Release2', 'Output', 'Output', 'Output', 'Output', 'Output'], 50001, 60000),
+    ('RELEASE', ['RELEASE', 'release', 'Release1', 'Release2', 'Output', 'RELEASED', 'RELEASED', 'RELEASED', 'RELEASED', 'RELEASED', 'RELEASED'], 60001, 70926)
+]
+
+#Only for FIN - second
+activities_info = [
+    ('FIN', ['FIN'], 0, 15000),
+    ('FIN', ['FIN', 'Fin', 'Fin'], 15001, 30000),
+    ('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 111', 'fin - 111'], 30001, 40000),
+    ('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'fin - 222', 'fin - 222', 'fin - 222'], 40001, 55000),
+    ('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over', 'Over', 'Over', 'Over', 'Over'], 55001, 65000),
+    ('FIN', ['FIN', 'Fin', 'fin - 111', 'fin - 222', 'Over', 'finished', 'finished', 'finished', 'finished', 'finished', 'finished'], 65001, 74738)
+]
+
+#Drift Pattern 1 NEW
+section_info = [
+    (0, 50000, ['NEW']),
+    (50000, 150000, ['NEW', 'NEW', 'NEW', 'NEW', 'NEW', 'NEW','begin']),
+    (150000, 200000, ['NEW', 'NEW', 'NEW', 'NEW', 'NEW', 'begin', 'begin']),
+    (200000, 250000, ['NEW', 'NEW', 'NEW', 'NEW', 'begin', 'begin', 'begin']),
+    (250000, 300000, ['NEW', 'NEW', 'NEW', 'begin', 'begin', 'begin', 'begin']),
+    (300000, 350000, ['NEW', 'NEW', 'begin', 'begin', 'begin', 'begin', 'begin']),
+    (350000, 400000, ['NEW', 'begin', 'begin', 'begin', 'begin', 'begin', 'begin']),
+    (400000, 451359, ['begin'])
+]
+
+#Drift Pattern 1 RELEASE
+section_info = [
+    (0, 50000, ['RELEASE']),
+    (50000, 150000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE','release']),
+    (150000, 200000, ['RELEASE','RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'release', 'release']),
+    (200000, 250000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'release', 'release', 'release']),
+    (250000, 300000, ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release', 'release', 'release']),
+    (300000, 350000, ['RELEASE', 'RELEASE', 'release', 'release', 'release', 'release', 'release']),
+    (350000, 400000, ['RELEASE', 'release', 'release', 'release', 'release', 'release', 'release']),
+    (400000, 451359, ['release'])
+]
+
+#Drift Pattern 1 FIN
+section_info = [
+    (0, 50000, ['FIN']),
+    (50000, 150000, ['FIN', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN','finished']),
+    (150000, 200000, ['FIN','FIN', 'FIN', 'FIN', 'FIN', 'finished', 'finished']),
+    (200000, 250000, ['FIN', 'FIN', 'FIN', 'FIN', 'finished', 'finished', 'finished']),
+    (250000, 300000, ['FIN', 'FIN', 'FIN', 'finished', 'finished', 'finished', 'finished']),
+    (300000, 350000, ['FIN', 'FIN', 'finished', 'finished', 'finished', 'finished', 'finished']),
+    (350000, 400000, ['FIN', 'finished', 'finished', 'finished', 'finished', 'finished', 'finished']),
+    (400000, 451359, ['finished'])
+]
+
+#Drift Pattern 1 CHANGE DIAGN
+section_info = [
+    (0, 50000, ['CHANGE DIAGN']),
+    (50000, 150000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN','Update Diagnosis']),
+    (150000, 200000, ['CHANGE DIAGN','CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis']),
+    (200000, 250000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+    (250000, 300000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+    (300000, 350000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'finished', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+    (350000, 400000, ['CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+    (400000, 451359, ['Update Diagnosis'])
+]
+
+
+#Drift Pattern 1 DELETE
+section_info = [
+    (0, 50000, ['DELETE']),
+    (50000, 150000, ['DELETE', 'DELETE', 'DELETE', 'DELETE', 'DELETE', 'DELETE','DELETE ATTEMPT 1']),
+    (150000, 200000, ['DELETE','DELETE', 'DELETE', 'DELETE', 'DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+    (200000, 250000, ['DELETE', 'DELETE', 'DELETE', 'DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+    (250000, 300000, ['DELETE', 'DELETE', 'DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+    (300000, 350000, ['DELETE', 'DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+    (350000, 400000, ['DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+    (400000, 451359, ['DELETE ATTEMPT 1'])
+]
+
+#Drift Pattern 1 REJECT
+section_info = [
+    (0, 50000, ['REJECT']),
+    (50000, 150000, ['REJECT', 'REJECT', 'REJECT', 'REJECT', 'REJECT', 'REJECT','reject']),
+    (150000, 200000, ['REJECT','REJECT', 'REJECT', 'REJECT', 'REJECT', 'reject', 'reject']),
+    (200000, 250000, ['REJECT', 'REJECT', 'REJECT', 'REJECT', 'reject', 'reject', 'reject']),
+    (250000, 300000, ['REJECT', 'REJECT', 'REJECT', 'reject', 'reject', 'reject', 'reject']),
+    (300000, 350000, ['REJECT', 'REJECT', 'reject', 'reject', 'reject', 'reject', 'reject']),
+    (350000, 400000, ['REJECT', 'reject', 'reject', 'reject', 'reject', 'reject', 'reject']),
+    (400000, 451359, ['reject'])
+]
+
+
+
+
+Section2 NEW
+section_info = [
+
+(0, 40000, ['NEW']), # 100% 'NEW' ​
+
+(40000, 80000, ['NEW', 'NEW', 'NEW', 'NEW', 'begin']), # 80% 'NEW', 20% 'begin' ​
+
+(80000, 120000, ['NEW', 'NEW', 'NEW', 'begin', 'begin']), # 60% 'NEW', 40% 'begin' ​
+
+(120000, 160000, ['NEW', 'NEW', 'begin', 'begin', 'begin']), # 40% 'NEW', 60% 'begin' ​
+
+(160000, 200000, ['NEW', 'begin', 'begin', 'begin', 'begin']), # 20% 'NEW', 80% 'begin' ​
+
+(200000, 240000, ['begin']), # 100% 'begin' ​
+
+(240000, 280000, ['begin', 'begin', 'begin', 'begin', 'NEW']), # 80% 'begin', 20% 'NEW' ​
+
+(280000, 320000, ['begin', 'begin', 'begin', 'NEW', 'NEW']), # 60% 'begin', 40% 'NEW' ​
+
+(320000, 360000, ['begin', 'begin', 'NEW', 'NEW', 'NEW']), # 40% 'begin', 60% 'NEW' ​
+
+(360000, 400000, ['begin', 'NEW', 'NEW', 'NEW', 'NEW']), # 20% 'begin', 80% 'NEW' ​
+
+(400000, 451359, ['NEW']) # 100% 'NEW' ​
+
+]
+
+Section2 RELEASE
+section_info = [
+(0, 40000, ['RELEASE']), # 100% 'NEW' ​
+
+(40000, 80000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'release']), # 80% 'NEW', 20% 'begin' ​
+
+(80000, 120000, ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release']), # 60% 'NEW', 40% 'begin' ​
+
+(120000, 160000, ['RELEASE', 'RELEASE', 'release', 'release', 'release']), # 40% 'NEW', 60% 'begin' ​
+
+(160000, 200000, ['RELEASE', 'release', 'release', 'release', 'release']), # 20% 'NEW', 80% 'begin' ​
+
+(200000, 240000, ['release']), # 100% 'begin' ​
+
+(240000, 280000, ['RELEASE','release', 'release', 'release', 'release' ]), # 80% 'begin', 20% 'NEW' ​
+
+(280000, 320000, [ 'RELEASE', 'RELEASE', 'release', 'release', 'release']), # 60% 'begin', 40% 'NEW' ​
+
+(320000, 360000, ['release', 'release', 'RELEASE', 'RELEASE', 'RELEASE']), # 40% 'begin', 60% 'NEW' ​
+
+(360000, 400000, ['release', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE']), # 20% 'begin', 80% 'NEW' ​
+
+(400000, 451359, ['RELEASE']) # 100% 'NEW' ​
+]
+
+Section2 FIN
+
+section_info = [
+(0, 40000, ['FIN']),
+
+(40000, 80000, ['FIN', 'FIN', 'FIN', 'FIN', 'finished']),
+
+(80000, 120000, ['FIN', 'FIN', 'FIN', 'finished', 'finished']),
+
+(120000, 160000, ['FIN', 'FIN', 'finished', 'finished', 'finished']),
+
+(160000, 200000, ['FIN', 'finished', 'finished', 'finished', 'finished']),
+
+(200000, 240000, ['finished']),
+
+(240000, 280000, ['FIN','finished', 'finished', 'finished', 'finished' ]),
+
+(280000, 320000, [ 'FIN', 'FIN', 'finished', 'finished', 'finished']),
+
+(320000, 360000, ['finished', 'finished', 'FIN', 'FIN', 'FIN']),
+
+(360000, 400000, ['finished', 'FIN', 'FIN', 'FIN', 'FIN']),
+
+(400000, 451359, ['FIN'])
+]
+
+
+Section2 CHANGE DIAGN
+
+section_info = [
+(0, 40000, ['CHANGE DIAGN']),
+
+(40000, 80000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis']),
+
+(80000, 120000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis']),
+
+(120000, 160000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+
+(160000, 200000, ['CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+
+(200000, 240000, ['Update Diagnosis']),
+
+(240000, 280000, ['CHANGE DIAGN','Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis' ]),
+
+(280000, 320000, ['CHANGE DIAGN', ' CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+
+(320000, 360000, ['Update Diagnosis', 'Update Diagnosis', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+(360000, 400000, ['Update Diagnosis', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+(400000, 451359, ['CHANGE DIAGN'])
+]
+
+Section2 DELETE
+
+section_info = [
+(0, 40000, ['DELETE']),
+
+(40000, 80000, ['DELETE', 'DELETE', 'DELETE', 'DELETE', 'DELETE ATTEMPT 1']),
+
+(80000, 120000, ['DELETE', 'DELETE', 'DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+
+(120000, 160000, ['DELETE', 'DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+
+(160000, 200000, ['DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+
+(200000, 240000, ['DELETE ATTEMPT 1']),
+
+(240000, 280000, ['DELETE','DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1' ]),
+
+(280000, 320000, [ 'DELETE', 'DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+
+(320000, 360000, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE', 'DELETE', 'DELETE']),
+
+(360000, 400000, ['DELETE ATTEMPT 1', 'DELETE', 'DELETE', 'DELETE', 'DELETE']),
+
+(400000, 451359, ['DELETE'])
+]
+
+Section2 REJECT
+
+section_info = [
+(0, 40000, ['REJECT']),
+
+(40000, 80000, ['REJECT', 'REJECT', 'REJECT', 'REJECT', 'reject']),
+
+(80000, 120000, ['REJECT', 'REJECT', 'REJECT', 'reject', 'reject']),
+
+(120000, 160000, ['REJECT', 'REJECT', 'reject', 'reject', 'reject']),
+
+(160000, 200000, ['REJECT', 'reject', 'reject', 'reject', 'reject']),
+
+(200000, 240000, ['reject']),
+
+(240000, 280000, ['REJECT','reject', 'reject', 'reject', 'reject' ]),
+
+(280000, 320000, [ 'REJECT', 'REJECT', 'reject', 'reject', 'reject']),
+
+(320000, 360000, ['reject', 'reject', 'REJECT', 'REJECT', 'REJECT']),
+
+(360000, 400000, ['reject', 'REJECT', 'REJECT', 'REJECT', 'REJECT']),
+
+(400000, 451359, ['REJECT'])
+]
+
+
+
+Section3 NEW
+section_info = [
+    (0, 60000, ['NEW']),  # 100% 'NEW'
+
+    (60000, 120000, ['begin', 'NEW', 'NEW', 'NEW', 'NEW']),  # 80% 'NEW', 20% 'begin'
+
+    (120000, 180000, ['NEW', 'NEW', 'NEW', 'begin', 'begin']),  # 60% 'NEW', 40% 'begin'
+
+    (180000, 240000, ['NEW', 'NEW', 'begin', 'begin', 'begin']),  # 40% 'NEW', 60% 'begin'
+
+    (240000, 300000, ['NEW', 'launch', 'begin', 'begin', 'begin']),  # 20% 'NEW', 20% 'launch', 60% 'begin'
+
+    (300000, 360000, ['launch', 'launch', 'begin', 'begin', 'begin']),  # 40% 'launch', 60% 'begin'
+
+    (360000, 420000, ['launch', 'begin', 'begin', 'begin', 'begin']),  # 80% 'begin', 20% 'launch'
+
+    (420000, 451359, ['begin'])  # 100% 'begin'
+
+]
+
+Section3 RELEASE
+section_info = [
+
+    (0, 60000, ['RELEASE']),  # 100% 'RELEASE'
+
+    (60000, 120000, ['release', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE']),  # 80% 'RELEASE', 20% 'release'
+
+    (120000, 180000, ['RELEASE', 'RELEASE', 'RELEASE', 'release', 'release']),  # 60% 'RELEASE', 40% 'release'
+
+    (180000, 240000, ['RELEASE', 'RELEASE', 'release', 'release', 'release']),  # 40% 'RELEASE', 60% 'release'
+
+    (240000, 300000, ['RELEASE', 'reles', 'release', 'release', 'release']),  # 20% 'RELEASE', 20% 'reles', 60% 'release'
+
+    (300000, 360000, ['reles', 'reles', 'release', 'release', 'release']),  # 40% 'reles', 60% 'release'
+
+    (360000, 420000, ['reles', 'release', 'release', 'release', 'release']),  # 80% 'release', 20% 'reles'
+
+    (420000, 451359, ['release'])  # 100% 'release'
+
+]
+
+Section3 FIN
+
+section_info = [
+
+    (0, 60000, ['FIN']),
+
+    (60000, 120000, ['finished', 'FIN', 'FIN', 'FIN', 'FIN']),
+
+    (120000, 180000, ['FIN', 'FIN', 'FIN', 'finished', 'finished']),
+
+    (180000, 240000, ['FIN', 'FIN', 'finished', 'finished', 'finished']),
+
+    (240000, 300000, ['FIN', 'Over', 'finished', 'finished', 'finished']),
+
+    (300000, 360000, ['Over', 'Over', 'finished', 'finished', 'finished']),
+
+    (360000, 420000, ['Over', 'finished', 'finished', 'finished', 'finished']),
+
+    (420000, 451359, ['finished'])
+]
+
+
+Section3 CHANGE DIAGN
+
+section_info = [
+
+    (0, 60000, ['CHANGE DIAGN']),
+
+    (60000, 120000, ['Update Diagnosis', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (120000, 180000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis']),
+
+    (180000, 240000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+
+    (240000, 300000, ['CHANGE DIAGN', 'CHANGE DIAGN111', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+
+    (300000, 360000, ['CHANGE DIAGN111', 'CHANGE DIAGN111', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+
+    (360000, 420000, ['CHANGE DIAGN111', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis', 'Update Diagnosis']),
+
+    (420000, 451359, ['Update Diagnosis'])
+
+]
+
+Section3 DELETE
+
+section_info = [
+
+    (0, 60000, ['DELETE']),
+
+    (60000, 120000, ['DELETE ATTEMPT', 'DELETE', 'DELETE', 'DELETE', 'DELETE']),
+
+    (120000, 180000, ['DELETE', 'DELETE', 'DELETE', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (180000, 240000, ['DELETE', 'DELETE', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (240000, 300000, ['DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (300000, 360000, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (360000, 420000, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (420000, 451359, ['DELETE ATTEMPT'])
+
+]
+
+Section3 REJECT
+
+section_info = [
+
+    (0, 60000, ['REJECT']),
+
+    (60000, 120000, ['reject', 'REJECT', 'REJECT', 'REJECT', 'REJECT']),
+
+    (120000, 180000, ['REJECT', 'REJECT', 'REJECT', 'reject', 'reject']),
+
+    (180000, 240000, ['REJECT', 'REJECT', 'reject', 'reject', 'reject']),
+
+    (240000, 300000, ['REJECT', 'rjct', 'reject', 'reject', 'reject']),
+
+    (300000, 360000, ['rjct', 'rjct', 'reject', 'reject', 'reject']),
+
+    (360000, 420000, ['rjct', 'reject', 'reject', 'reject', 'reject']),
+
+    (420000, 451359, ['reject'])
+]
+
+
+
+
+
+Section4 NEW
+section_info = [
+    (0, 50000, ['NEW']),  # 100% 'NEW'
+
+    (50000, 100000, ['begin','NEW', 'NEW', 'NEW']),  # 75% 'NEW', 25% 'begin'
+
+    (100000, 150000, ['begin', 'begin', 'NEW', 'NEW', 'NEW']),  # 60% 'NEW', 40% 'begin'
+
+    (150000, 200000, ['NEW', 'launch', 'begin', 'begin', 'begin']),  # 20% 'NEW', 20% 'launch', 60% begin
+
+    (200000, 250000, ['launch', 'launch', 'begin', 'begin', 'begin',]),  # 60% 'begin', 40% 'launch'
+
+    (250000, 300000, ['launch']),  # 100% 'launch'
+
+    (300000, 300300, ['NEW', 'NEW','launch','launch','launch','launch','launch','launch','launch','launch' ]),  # 80% 'launch', 20% 'NEW'
+
+    (300300, 300600, ['begin', 'begin','launch','launch','launch','launch','launch','launch','launch','launch']),  # 80% 'launch', 20% 'begin'
+
+    (300600, 451359, ['launch']),  # 100% 'launch'
+
+]
+
+Section4 RELEASE
+section_info = [
+    (0, 50000, ['RELEASE']),
+
+    (50000, 100000, ['reles','RELEASE', 'RELEASE', 'RELEASE']),
+
+    (100000, 150000, ['reles', 'reles', 'RELEASE', 'RELEASE', 'RELEASE']),
+
+    (150000, 200000, ['RELEASE', 'release', 'reles', 'reles', 'reles']),
+
+    (200000, 250000, ['release', 'release', 'reles', 'reles', 'reles',]),
+
+    (250000, 300000, ['release']),
+
+    (300000, 300300, ['RELEASE', 'RELEASE','release','release','release','release','release','release','release','release']),
+
+    (300300, 300600, ['reles', 'reles','release','release','release','release','release','release','release','release']),
+
+    (300600, 451359, ['release'])
+]
+
+Section4 FIN
+
+section_info = [
+    (0, 50000, ['FIN']),
+
+    (50000, 100000, ['finished','FIN', 'FIN', 'FIN']),
+
+    (100000, 150000, ['finished', 'finished', 'FIN', 'FIN', 'FIN']),
+
+    (150000, 200000, ['FIN', 'Over', 'finished', 'finished', 'finished']),
+
+    (200000, 250000, ['Over', 'Over', 'finished', 'finished', 'finished',]),
+
+    (250000, 300000, ['Over']),
+
+    (300000, 300300, ['FIN', 'FIN','Over','Over','Over','Over','Over','Over','Over','Over']),
+
+    (300300, 300600, ['finished', 'finished','Over','Over','Over','Over','Over','Over','Over','Over']),
+
+    (300600, 451359, ['Over'])
+
+]
+
+
+Section4 CHANGE DIAGN
+
+section_info = [
+    (0, 50000, ['CHANGE DIAGN']),
+
+    (50000, 100000, ['CHANGE DIAGN111','CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (100000, 150000, ['CHANGE DIAGN111', 'CHANGE DIAGN111', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (150000, 200000, ['CHANGE DIAGN', 'Update Diagnosis', 'CHANGE DIAGN111', 'CHANGE DIAGN111', 'CHANGE DIAGN111']),
+
+    (200000, 250000, ['Update Diagnosis', 'Update Diagnosis', 'CHANGE DIAGN111', 'CHANGE DIAGN111', 'CHANGE DIAGN111',]),
+
+    (250000, 300000, ['Update Diagnosis']),
+
+    (300000, 300300, ['CHANGE DIAGN', 'CHANGE DIAGN','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis']),
+
+    (300300, 300600, ['CHANGE DIAGN111', 'CHANGE DIAGN111','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis','Update Diagnosis']),
+
+    (300600, 451359, ['Update Diagnosis'])
+]
+
+Section4 DELETE
+
+section_info = [
+    (0, 50000, ['DELETE']),
+
+    (50000, 100000, ['DELETE ATTEMPT 1','DELETE', 'DELETE', 'DELETE']),
+
+    (100000, 150000, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE', 'DELETE', 'DELETE']),
+
+    (150000, 200000, ['DELETE', 'DELETE ATTEMPT', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+
+    (200000, 250000, ['DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1',]),
+
+    (250000, 300000, ['DELETE ATTEMPT']),
+
+    (300000, 300300, ['DELETE', 'DELETE','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT']),
+
+    (300300, 300600, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT 1','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT']),
+
+    (300600, 451359, ['DELETE ATTEMPT'])
+]
+
+Section4 REJECT
+
+section_info = [
+    (0, 50000, ['REJECT']),
+
+    (50000, 100000, ['rjct','REJECT', 'REJECT', 'REJECT']),
+
+    (100000, 150000, ['rjct', 'rjct', 'REJECT', 'REJECT', 'REJECT']),
+
+    (150000, 200000, ['REJECT', 'reject', 'rjct', 'rjct', 'rjct']),
+
+    (200000, 250000, ['reject', 'reject', 'rjct', 'rjct', 'rjct',]),
+
+    (250000, 300000, ['reject']),
+
+    (300000, 300300, ['REJECT', 'REJECT','reject','reject','reject','reject','reject','reject','reject','reject']),
+
+    (300300, 300600, ['rjct', 'rjct','reject','reject','reject','reject','reject','reject','reject','reject']),
+
+    (300600, 451359, ['reject'])
+]

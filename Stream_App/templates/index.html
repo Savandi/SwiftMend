@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SwiftMend Stream Endpoint Controllor</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#start').click(function() {
+                $.post('/control', { action: 'start' });
+            });
+            $('#pause').click(function() {
+                $.post('/control', { action: 'pause' });
+            });
+            $('#resume').click(function() {
+                $.post('/control', { action: 'resume' });
+            });
+            $('#next').click(function() {
+                $.post('/control', { action: 'next_event' }, function(data) {
+                    $('#events').append('<p>' + data + '</p>');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>CSV Streaming</h1>
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="resume">Resume</button>
+    <button id="next">Next Event</button>
+    <div id="events"></div>
+</body>
+</html>

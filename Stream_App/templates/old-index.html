@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Stream</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="pause">Pause</button>
+    <button id="resume">Resume</button>
+    <button id="next">Next</button>
+
+    <div id="events"></div>
+
+    <script>
+        $("#pause").click(function() {
+            $.post("/pause");
+        });
+
+        $("#resume").click(function() {
+            $.post("/resume");
+        });
+
+        $("#next").click(function() {
+            $.post("/next");
+        });
+
+var source = new EventSource("/stream");
+
+source.onmessage = function(event) {
+    console.log("Received data: ", event.data
+    var html = "<p>" + JSON.stringify(JSON.parse(event.data), null, 2) + "</p>";
+    document.getElementById('events').innerHTML += html;
+};
+
+source.onerror = function(error) {
+    console.error("EventSource failed:", error);
+};
+    </script>
+</body>
+</html>
