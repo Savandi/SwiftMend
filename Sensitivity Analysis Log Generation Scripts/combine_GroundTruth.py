@@ -32,16 +32,16 @@ def merge_and_update_labels(main_csv, ground_truth_files):
         events_df.drop(columns=['new_event_label'], inplace=True)
 
     # Save the updated DataFrame to a new CSV file
-    events_df.to_csv('C:/Git/SwiftMend/Stream_App/data/log/Hospital billing/Hospital_Billing_modified_groundTruth_onlyREJECT_sections4.csv', index=False)
+    events_df.to_csv('C:/Git/SwiftMend/Stream_App/data/log/Hospital billing/Hospital_Billing_modified_groundTruth_onlyCHANGE DIAGN_Polluted1.csv', index=False)
     print("Updated events file has been saved to 'Hospital_Billing_modified_groundTruth.csv'.")
 
 # List of ground truth files for each activity
 ground_truth_files = [
-    'C:/Git/SwiftMend/Stream_App/REJECT_ground_truth_output_onlyREJECT_sections4.csv'
+    'C:/Git/SwiftMend/Stream_App/REJECT_ground_truth_output_onlyCHANGE DIAGN_Polluted1.csv'
 ]
 
 # Path to the main events CSV file
-main_csv_path = 'C:/Git/SwiftMend/Stream_App/data/log/Hospital billing/Hospital Billing_modified_REJECT_sections4.csv'
+main_csv_path = 'C:/Git/SwiftMend/Stream_App/data/log/Hospital billing/Hospital Billing_modified_CHANGE DIAGN_Polluted1.csv'
 
 # Execute the function
 merge_and_update_labels(main_csv_path, ground_truth_files)

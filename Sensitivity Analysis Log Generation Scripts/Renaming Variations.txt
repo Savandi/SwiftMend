@@ -1228,3 +1228,215 @@ section_info = [
 
     (300600, 451359, ['reject'])
 ]
+
+
+
+
+#######Current New Patterns#########
+
+Synonymous Activity Label Pattern
+
+section_info = [
+    (0, 50000, ['NEW']),
+    (50000, 150000, ['NEW', 'NEW', 'NEW', 'NEW', 'NEW', 'NEW','begin']),
+
+    (150000, 200000, ['NEW', 'NEW', 'NEW', 'NEW', 'NEW', 'begin', 'begin']),
+
+    (200000, 250000, ['NEW', 'NEW', 'NEW', 'NEW', 'begin', 'begin', 'begin']),
+
+    (250000, 300000, ['NEW', 'NEW', 'NEW', 'begin', 'begin', 'begin', 'begin']),
+
+    (300000, 350000, ['NEW', 'NEW', 'begin', 'begin', 'begin', 'begin', 'begin']),
+
+    (350000, 400000, ['NEW', 'begin', 'begin', 'begin', 'begin', 'begin', 'begin']),
+
+    (400000, 451359, ['begin'])
+]
+
+
+section_info = [
+    (0, 50000, ['RELEASE']),
+    (50000, 150000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'Discharge']),
+    (150000, 200000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'Discharge', 'Discharge']),
+    (200000, 250000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'Discharge', 'Discharge', 'Discharge']),
+    (250000, 300000, ['RELEASE', 'RELEASE', 'RELEASE', 'Discharge', 'Discharge', 'Discharge', 'Discharge']),
+    (300000, 350000, ['RELEASE', 'RELEASE', 'Discharge', 'Discharge', 'Discharge', 'Discharge', 'Discharge']),
+    (350000, 400000, ['RELEASE', 'Discharge', 'Discharge', 'Discharge', 'Discharge', 'Discharge', 'Discharge']),
+    (400000, 451359, ['Discharge'])
+]
+
+Distorted Activity Label Pattern + Synonymous Activity Label Pattern
+section_info = [
+
+    (0, 60000, ['DELETE']),
+
+    (60000, 120000, ['DELETE ATTEMPT', 'DELETE', 'DELETE', 'DELETE', 'DELETE']),
+
+    (120000, 180000, ['DELETE', 'DELETE', 'DELETE', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (180000, 240000, ['DELETE', 'DELETE', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (240000, 300000, ['DELETE', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (300000, 360000, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (360000, 420000, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT']),
+
+    (420000, 451359, ['DELETE ATTEMPT'])
+
+]
+
+
+#Drift Pattern 4 DELETE
+
+section_info = [
+    (0, 50000, ['DELETE']),
+
+    (50000, 100000, ['DELETE ATTEMPT 1','DELETE', 'DELETE', 'DELETE']),
+
+    (100000, 150000, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE', 'DELETE', 'DELETE']),
+
+    (150000, 200000, ['DELETE', 'DELETE ATTEMPT', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1']),
+
+    (200000, 250000, ['DELETE ATTEMPT', 'DELETE ATTEMPT', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1', 'DELETE ATTEMPT 1',]),
+
+    (250000, 300000, ['DELETE ATTEMPT']),
+
+    (300000, 300300, ['DELETE', 'DELETE','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT']),
+
+    (300300, 300600, ['DELETE ATTEMPT 1', 'DELETE ATTEMPT 1','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT','DELETE ATTEMPT']),
+
+    (300600, 451359, ['DELETE ATTEMPT'])
+]
+
+
+#Drift Pattern 4 REJECT
+
+section_info = [
+    (0, 50000, ['REJECT']),
+
+    (50000, 100000, ['rjct','REJECT', 'REJECT', 'REJECT']),
+
+    (100000, 150000, ['rjct', 'rjct', 'REJECT', 'REJECT', 'REJECT']),
+
+    (150000, 200000, ['REJECT', 'reject', 'rjct', 'rjct', 'rjct']),
+
+    (200000, 250000, ['reject', 'reject', 'rjct', 'rjct', 'rjct',]),
+
+    (250000, 300000, ['reject']),
+
+    (300000, 300300, ['REJECT', 'REJECT','reject','reject','reject','reject','reject','reject','reject','reject']),
+
+    (300300, 300600, ['rjct', 'rjct','reject','reject','reject','reject','reject','reject','reject','reject']),
+
+    (300600, 451359, ['reject'])
+]
+
+
+##Distorted Activity Label Pattern
+
+
+section_info = [
+    (0, 50000, ['FIN']),
+
+    (50000, 100000, ['FIN', 'FIN', 'FIN', 'FIN', 'F', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN']),
+
+    (100000, 150000, ['FIN', 'FIN', 'FIN', 'FIN', 'F', 'F', 'FIN', 'FIN', 'FIN', 'FIN']),
+
+    (150000, 200000, ['FIN', 'FIN', 'FIN', 'FIN', 'F', 'F', 'FIN', 'FIN', 'FIN', 'FIN']),
+
+    (200000, 250000, ['FIN', 'F', 'FIN', 'FIN', 'F', 'F', 'FIN', 'F', 'FIN', 'FIN']),
+
+    (250000, 300000, ['FIN']),
+
+    (300000, 300300, ['FIN', 'FIN', 'FIN', 'FIN', 'F', 'F', 'FIN', 'FIN', 'FIN', 'FIN']),
+
+    (300300, 300600, ['F', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN']),
+
+    (300600, 451359, ['FIN'])
+]
+
+
+section_info = [
+    (0, 50000, ['RELEASE']),
+
+    (50000, 100000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELES', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE']),
+
+    (100000, 150000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELES', 'RELES', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE']),
+
+    (150000, 200000, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELES', 'RELES', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE']),
+
+    (200000, 250000, ['RELEASE', 'RELES', 'RELEASE', 'RELEASE', 'RELES', 'RELES', 'RELEASE', 'RELES', 'RELEASE', 'RELEASE']),
+
+    (250000, 300000, ['RELEASE']),
+
+    (300000, 300300, ['RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELES', 'RELES', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE']),
+
+    (300300, 300600, ['RELES', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE', 'RELEASE']),
+
+    (300600, 451359, ['RELEASE'])
+]
+
+
+section_info = [
+    (0, 50000, ['CHANGE DIAGN']),
+
+    (50000, 100000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHNDGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (100000, 150000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHNDGN', 'CHNDGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (150000, 200000, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHNDGN', 'CHNDGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (200000, 250000, ['CHANGE DIAGN', 'CHNDGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHNDGN', 'CHNDGN', 'CHANGE DIAGN', 'CHNDGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (250000, 300000, ['CHANGE DIAGN']),
+
+    (300000, 300300, ['CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHNDGN', 'CHNDGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (300300, 300600, ['CHNDGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+
+    (300600, 451359, ['CHANGE DIAGN'])
+]
+
+Polluted Activity Label Pattern
+
+section_info = [
+    (0, 50000, ['FIN']),
+
+    (50000, 150000, ['FIN', 'FIN', 'FIN', 'FIN', 'FIN by User1', 'FIN by User1','FIN by User2']),
+
+    (150000, 200000, ['FIN', 'FIN by User1', 'FIN by User2', 'FIN by User1', 'FIN by User2', 'FIN', 'FIN']),
+
+    (200000, 250000, ['FIN', 'FIN', 'FIN', 'FIN', 'FIN', 'FIN by User1', 'FIN by User2']),
+
+    (250000, 300000, ['FIN', 'FIN', 'FIN by User1', 'FIN', 'FIN', 'FIN by User1', 'FIN by User2']),
+
+    (300000, 350000, ['FIN by User2', 'FIN', 'FIN', 'FIN', 'FIN by User1', 'FIN by User2', 'FIN by User1']),
+
+    (350000, 400000, ['FIN', 'FIN', 'FIN by User1', 'FIN', 'FIN , 'FIN by User2', 'FIN']),
+
+    (400000, 451359, ['FIN'])
+]
+
+section_info = [
+    (0, 50000, ['RELEASE']),
+    (50000, 150000, ['RELEASE', 'RELEASE by User2', 'RELEASE by User3', 'RELEASE', 'RELEASE by User1', 'RELEASE by User2', 'RELEASE']),
+    (150000, 200000, ['RELEASE', 'RELEASE by User3', 'RELEASE by User1', 'RELEASE', 'RELEASE by User2', 'RELEASE by User3', 'RELEASE']),
+    (200000, 250000, ['RELEASE', 'RELEASE by User1', 'RELEASE by User2', 'RELEASE', 'RELEASE by User3', 'RELEASE by User1', 'RELEASE']),
+    (250000, 300000, ['RELEASE', 'RELEASE by User2', 'RELEASE by User3', 'RELEASE', 'RELEASE by User1', 'RELEASE by User2', 'RELEASE']),
+    (300000, 350000, ['RELEASE', 'RELEASE by User3', 'RELEASE by User1', 'RELEASE', 'RELEASE by User2', 'RELEASE by User3', 'RELEASE']),
+    (350000, 400000, ['RELEASE', 'RELEASE by User1', 'RELEASE by User2', 'RELEASE', 'RELEASE by User3', 'RELEASE by User1', 'RELEASE']),
+    (400000, 451359, ['RELEASE'])
+]
+
+
+section_info = [
+    (0, 50000, ['CHANGE DIAGN']),
+    (50000, 150000, ['CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN by User1', 'CHANGE DIAGN by User3', 'CHANGE DIAGN', 'CHANGE DIAGN by User2']),
+    (150000, 200000, ['CHANGE DIAGN', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN']),
+    (200000, 250000, ['CHANGE DIAGN by User3', 'CHANGE DIAGN', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN by User3']),
+    (250000, 300000, ['CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User1']),
+    (300000, 350000, ['CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN by User2']),
+    (350000, 400000, ['CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+    (400000, 451359, ['CHANGE DIAGN'])
+]

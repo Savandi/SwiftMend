@@ -14,7 +14,7 @@ def process_csv(input_file, output_file, section_info):
         section_df = original_df.iloc[section_start:section_end]
 
         # Get the indices of 'NEW' events within the section
-        new_indices = section_df[section_df['event'] == 'REJECT'].index
+        new_indices = section_df[section_df['event'] == 'CHANGE DIAGN'].index
 
         # Rename the 'NEW' events within the section based on the provided variations
         for i, idx in enumerate(new_indices):
@@ -29,28 +29,21 @@ def process_csv(input_file, output_file, section_info):
     print(f"CSV file processed. Output saved as {output_file}.")
 
 # Define the section information and 'NEW' label variations for each section
+
 section_info = [
-    (0, 50000, ['REJECT']),
 
-    (50000, 100000, ['rjct','REJECT', 'REJECT', 'REJECT']),
-
-    (100000, 150000, ['rjct', 'rjct', 'REJECT', 'REJECT', 'REJECT']),
-
-    (150000, 200000, ['REJECT', 'reject', 'rjct', 'rjct', 'rjct']),
-
-    (200000, 250000, ['reject', 'reject', 'rjct', 'rjct', 'rjct',]),
-
-    (250000, 300000, ['reject']),
-
-    (300000, 300300, ['REJECT', 'REJECT','reject','reject','reject','reject','reject','reject','reject','reject']),
-
-    (300300, 300600, ['rjct', 'rjct','reject','reject','reject','reject','reject','reject','reject','reject']),
-
-    (300600, 451359, ['reject'])
+    (0, 50000, ['CHANGE DIAGN']),
+    (50000, 150000, ['CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN by User1', 'CHANGE DIAGN by User3', 'CHANGE DIAGN', 'CHANGE DIAGN by User2']),
+    (150000, 200000, ['CHANGE DIAGN', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN']),
+    (200000, 250000, ['CHANGE DIAGN by User3', 'CHANGE DIAGN', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN by User3']),
+    (250000, 300000, ['CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User1']),
+    (300000, 350000, ['CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN', 'CHANGE DIAGN by User2']),
+    (350000, 400000, ['CHANGE DIAGN', 'CHANGE DIAGN by User3', 'CHANGE DIAGN by User1', 'CHANGE DIAGN', 'CHANGE DIAGN by User2', 'CHANGE DIAGN', 'CHANGE DIAGN']),
+    (400000, 451359, ['CHANGE DIAGN'])
 ]
 
 # Example usage
 input_file = 'C:/Git/SwiftMend/Stream_App/data/log/Hospital billing/Hospital Billing Log.csv'
-output_file = 'C:/Git/SwiftMend/Stream_App/data/log/Hospital billing/Hospital Billing_modified_REJECT_sections4.csv'
+output_file = 'C:/Git/SwiftMend/Stream_App/data/log/Hospital billing/Hospital Billing_modified_CHANGE DIAGN_Polluted1.csv'
 
 process_csv(input_file, output_file, section_info)
