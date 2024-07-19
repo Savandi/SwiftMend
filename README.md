@@ -1,20 +1,48 @@
-<p align="center">
-  <img src="logo.png" alt="SwiftMend Logo" width="200"/>
-</p>
+# SwiftMend: Detecting and Repairing Activity Label Quality Issues in Process Event Streams
 
-# SwiftMend
+## Overview
 
-SwiftMend is an innovative application designed to enhance the accuracy and efficiency of process mining by addressing the issue of quality drift. Our tool specializes in identifying and repairing similar activity labels within stream datasets, a critical step in ensuring the integrity and reliability of process mining results.
+SwiftMend is a novel approach for dynamically detecting and repairing synonymous, polluted, and distorted activity labels in process event streams (PES). This solution addresses a critical gap in online process mining by improving the quality of input data in real-time streaming environments.
 
-## About SwiftMend
+## Key Features
 
-In process mining, quality drift can significantly impact the analysis, leading to skewed or inaccurate results. SwiftMend addresses this challenge head-on by providing a robust solution for identifying similar activity labels that often contribute to quality drift in dynamic stream datasets.
+- Real-time imperfect label detection and control flow updates
+- Dynamic activity similarity reassessment
+- Semantic activity clustering via customized incremental hierarchical clustering
+- Frequency- and recency-based label selection for dynamic repair
+- Adaptive historical data management using a Lossy Counting-inspired decay mechanism
 
-### Key Features
+## Repository Contents
 
-- **Real-time Identification:** Swiftly identifies similar activity labels in streaming data, enabling prompt corrections and adjustments.
-- **Automatic Repair:** Offers automated suggestions for label corrections, reducing manual effort and increasing efficiency.
-- **Data Integrity:** Ensures the accuracy and consistency of your process mining data, leading to more reliable analysis and insights.
-- **User-friendly Interface:** Designed with a focus on usability, making it accessible for both technical and non-technical users.
-- **Scalability:** Efficiently processes large datasets, ensuring scalability and performance.
+This repository contains:
+- Scripts for data generation
+- Execution logs from experiments
+- Scripts for performance calculations
+
+## Background
+
+Process Mining techniques extract insights from event logs to discover, monitor, and improve business processes. The quality of input data significantly impacts the reliability and accuracy of these insights. SwiftMend focuses on addressing process-data quality (PDQ) issues in PES beyond anomalous events or traces.
+
+## Methodology
+
+SwiftMend employs:
+- Memory-efficient approximate data structures
+- An incremental hierarchical clustering algorithm
+- Decaying and forgetting mechanisms
+
+These components work together to ensure efficiency and adaptability in streaming contexts.
+
+## Evaluation
+
+The approach was validated using publicly available real-life logs from two hospitals:
+
+Experiments included:
+- Baseline comparison against an existing offline technique
+- Sensitivity analysis to assess performance under changing configurations and log characteristics
+
+
+## Implementation
+
+SwiftMend is implemented as a Java-based prototype and is available as a plugin in the open-source PraeclarusPDQ framework (https://github.com/praeclaruspdq/PraeclarusPDQ).
+
 

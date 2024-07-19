@@ -1,0 +1,1 @@
+The log files used for validations along with their ground truths and results are publicly available through https://www.dropbox.com/scl/fo/5kgxhtsgply2e4jkqdtbw/APKxHRJbu6TYBxtbVM7gfys?rlkey=1aut9fu4mkod2ce9n6tznov6p&st=lm2kc6nd&dl=0.
