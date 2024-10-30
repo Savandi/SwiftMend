@@ -7,7 +7,7 @@
 SwiftMend is a novel approach for dynamically detecting and repairing synonymous, polluted, and distorted activity labels in process event streams (PES), as visualised below. 
 
 <p align="center">
-  <img src="Stream label issue manifestation.png" width=250 alt="Issue Manifestations"/>
+  <img src="Stream label issue manifestation.png" width=700 alt="Issue Manifestations"/>
 </p>
 
 This solution addresses a critical gap in online process mining by improving the quality of input data in real-time streaming environments.
@@ -43,7 +43,7 @@ SwiftMend employs:
 These components work together to ensure efficiency and adaptability in streaming contexts.
 
 <p align="center">
-  <img src="OverviewSwiftMendNew.png" width=250 alt="SwiftMend Diagram"/>
+  <img src="OverviewSwiftMendNew.png" width=700 alt="SwiftMend Diagram"/>
 </p>
 
 ## Evaluation
